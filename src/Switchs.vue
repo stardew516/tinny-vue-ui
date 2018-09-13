@@ -32,11 +32,11 @@
       },
       onColor: {  // on状态的颜色
         type: String,
-        default: '#34a853'
+        default: '#6FD700'
       },
       offColor: { // off状态的颜色
         type: String,
-        default: '#e66d72'
+        default: '#F75500'
       },
       value: {  // true  false值  true时 状态为on false状态为off
         type: Boolean,
@@ -64,14 +64,15 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   @import "../static/iconfont.scss";
+  @import "../static/color.scss";
 
   .switch {
     display: inline-block;
     position: relative;
     transition: all ease .3s;
-    border: 1px solid #eee;
+    border: 1px solid $border;
     box-sizing: border-box;
     width: 60px;
     height: 22px;
@@ -81,7 +82,7 @@
     display: inline-block;
     position: absolute;
     font-size: 14px;
-    color: #fff;
+    color: $white;
     transition: all ease .6s;
     box-sizing: border-box;
     -webkit-user-select: none;
@@ -91,10 +92,10 @@
   }
   .turn {
     display: inline-block;
-    background-color: #fff;
+    background-color: $white;
     position: absolute;
     transition: all ease .3s;
-    border: 1px solid #eee;
+    border: 1px solid $border;
     box-sizing: border-box;
   }
   .left10 {

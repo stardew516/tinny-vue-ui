@@ -2,22 +2,50 @@
 #### 微信扫码体验：
 ![vue组件扫码体验](https://raw.githubusercontent.com/stardew516/vueui/master/src/static/img/%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA.png)
 
+#### 包含功能：  
 
-#### 包含功能： 
-1. 输入框组件  
-2. cell组件  
-3. loading组件  
-4. 弹窗组件  
-5. tabbar组件  
-6. toast组件  
-7. button组件  
-8. page分页组件  
-9. switch开关  
-10. folder折叠面板  
-11. progressBar进度条组件  
-12. 加减计数器  
-13. 步骤条  
+##### 基础组件  
 
+1. Button 按钮  
+2. Icon 图标  
+3. Loadmore 加载更多  
+4. Tag 标记  
+  
+##### 布局
+
+5. Cell 列表  
+6. Grid 宫格  
+7. Layout 布局  
+8. Panel 面板  
+9. Folder 折叠面板  
+
+##### 表单组件
+
+10. Input 输入框  
+11. InputNum 计数器  
+12. ProgressBar 进度条  
+13. Rate 星级条  
+14. Switch 开关  
+  
+##### 导航组件
+
+15. NoticeBar通知条  
+16. PopUps 弹出层  
+17. Stepbar 步骤条  
+18. Tabbar 标签  
+  
+##### 操作提示组件
+
+19. ActionSheet 操作盘  
+20. Dialog 弹窗  
+21. Toast 提示框  
+22. Toptips 提示条  
+
+##### 其它
+
+23. Page 分页  
+24. SearchBar 搜索条  
+  
 # tinny-vue-ui
 
 

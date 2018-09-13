@@ -2,12 +2,12 @@
   <div  class="input-num-box clearfix" :init-val="initVal" :max="max" :min="min" :increase="increase">
     <div v-if="!!arrow">
       <span class="minus arrow-down icon-down" :class="{gray: Number(inputVal) <= Number(min)}" @click="minus"></span>
-      <input v-model="inputVal" :name="name" type="text" @keyup="valid" value="0" class="input-number"/>
+      <input v-model="inputVal" :name="name" type="number" @keyup="valid" value="0" class="input-number"/>
       <span class="add arrow-up icon-up" :class="{gray: Number(inputVal) >= Number(max)}" @click="add"></span>
     </div>
     <div v-if="!arrow">
       <span class="minus icon-minus" :class="{gray: Number(inputVal) <= Number(min)}" @click="minus"></span>
-      <input v-model="inputVal" :name="name" type="text" @keyup="valid" value="0" class="input-number"/>
+      <input v-model="inputVal" :name="name" type="number" @keyup="valid" value="0" class="input-number"/>
       <span class="add icon-plus" :class="{gray: Number(inputVal) >= Number(max)}" @click="add"></span>
     </div>
   </div>
@@ -81,8 +81,9 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   @import "../static/iconfont.scss";
+  @import "../static/color.scss";
   .clearfix {
     zoom: 1;
   }
@@ -95,12 +96,27 @@
   }
   .input-num-box {
     overflow: hidden;
-    border: 1px solid #ddd;
+    border: 1px solid transparent;
     display: inline-block;
     border-radius: 4px;
     position: relative;
     min-width: 75px;
     max-width: 120px;
+    &.success {
+      .add, .minus {
+        background-color: $success;
+      }
+    }
+    &.warn {
+      .add, .minus {
+        background-color: $warn;
+      }
+    }
+    &.danger {
+      .add, .minus {
+        background-color: $danger;
+      }
+    }
   }
   .add {
     float: left;
@@ -108,8 +124,8 @@
     height: 30px;
     line-height: 30px;
     text-align: center;
-    color: #fff;
-    background-color: #ff0000;
+    color: $white;
+    background-color: $primary;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -123,10 +139,12 @@
     padding: 0;
     line-height: 30px;
     text-align: center;
-    color: #666;
+    color: $color6;
     outline: none;
-    border: 0 none;
+    border: 1px solid $border;
     box-sizing: border-box;
+    border-radius: 0;
+    box-shadow: 0;
   }
   .minus {
     float: left;
@@ -134,8 +152,8 @@
     height: 30px;
     line-height: 30px;
     text-align: center;
-    color: #fff;
-    background-color: #ff0000;
+    color: $white;
+    background-color: $primary;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -143,7 +161,7 @@
     user-select: none;
   }
   .gray {
-    background-color: #ddd;
+    background-color: $disabled!important;
     cursor: default;
   }
   .arrow-up {
@@ -154,7 +172,7 @@
     top: 0;
     right: 0;
     font-size: 10px;
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid $border;
   }
   .arrow-down {
     position: absolute;
